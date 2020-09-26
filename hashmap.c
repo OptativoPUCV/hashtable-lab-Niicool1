@@ -45,7 +45,17 @@ int is_equal(void* key1, void* key2){
 
 
 void insertMap(HashMap * map, char * key, void * value) {
-
+  long hash_= hash(key,map->capacity);
+  int i;
+  for (i=0;i<map->capacity;i++){
+    if ((map->buckets == NULL)&& (map->buckets[i]->key == NULL)){
+        map->buckets[hash_]->key=key;
+        map->buckets[hash_]->value=value; 
+    }
+    else{
+        continue;
+    }
+  }
 
 }
 
