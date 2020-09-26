@@ -169,3 +169,9 @@ Sat Sep 26 23:01:45 UTC 2020:
  tests:  4|5
 total_score: 20/70
 cdf0141
+Sat Sep 26 23:03:21 UTC 2020: 
+ hashmap.c | 5 +++--
+ 1 file changed, 3 insertions(+), 2 deletions(-)
+ tests:  1|5
+total_score: 10/70
+ec1ab0c
