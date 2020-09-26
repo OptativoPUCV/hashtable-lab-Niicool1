@@ -50,7 +50,7 @@ void insertMap(HashMap * map, char * key, void * value) {
 
   long i;
   for (i=0;i<map->capacity;i++){
-    if (h>=map->capacity-1){
+    if (h==map->capacity-1){
       h=0;
     }
     if ((map->buckets[h] == NULL) && (x->key != NULL)){
