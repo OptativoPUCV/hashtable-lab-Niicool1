@@ -53,8 +53,11 @@ void insertMap(HashMap * map, char * key, void * value) {
         map->buckets[h]=x;
     }
     else{
+      if (is_equal(map->buckets[h]->key,key)){
+        break;
+      }
       h++;
-      continue;
+        continue;
     }
     
   }
