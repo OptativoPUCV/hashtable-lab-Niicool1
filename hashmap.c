@@ -55,7 +55,7 @@ void insertMap(HashMap * map, char * key, void * value) {
     else{
         continue;
     }
-    map->size=map->size +1;
+    //map->size=map->size +1;
   }
 
 }
