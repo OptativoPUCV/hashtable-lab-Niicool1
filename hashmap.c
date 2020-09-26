@@ -53,13 +53,12 @@ void insertMap(HashMap * map, char * key, void * value) {
         map->buckets[h]=x;
     }
     else{
-      map->size=map->size +1;
       h++;
-        continue;
+      continue;
     }
-    map->size=map->size +1;
+    
   }
-
+  map->size=map->size +1;
 }
 
 void enlarge(HashMap * map) {
