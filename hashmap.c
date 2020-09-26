@@ -54,6 +54,7 @@ void insertMap(HashMap * map, char * key, void * value) {
     }
     if ((map->buckets[i] == NULL) || (x->key == NULL)){
         map->buckets[i]=x;
+        map->size=map->size +1;
         break;
     }
     else{
@@ -64,7 +65,7 @@ void insertMap(HashMap * map, char * key, void * value) {
     }
     
   }
-  map->size=map->size +1;
+  
 }
 
 void enlarge(HashMap * map) {
