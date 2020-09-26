@@ -59,7 +59,7 @@ void insertMap(HashMap * map, char * key, void * value) {
         break;
     }
     else{
-      if (is_equal(map->buckets[h]->key,key)){
+      if (is_equal(map->buckets[i]->key,key)){
         break;
       }
     }
