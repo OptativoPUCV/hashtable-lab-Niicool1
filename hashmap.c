@@ -50,22 +50,21 @@ void insertMap(HashMap * map, char * key, void * value) {
 
   long i;
   for (i=h;i<map->capacity;i++){
-    if (i==map->capacity-1){
+    if (i>=map->capacity-1){
       i=0;
     }
-    if ((map->buckets[i] == NULL) && (x->key != NULL)){
-        map->buckets[i]=x;
-        map->size=map->size +1;
+    if ((map->buckets[h] == NULL) && (x->key != NULL)){
+        map->buckets[h]=x;
         break;
     }
     else{
-      if (is_equal(map->buckets[i]->key,key)){
+      if (is_equal(map->buckets[h]->key,key)){
         break;
       }
     }
-    
+    h++;
   }
-  
+  map->size=map->size +1;
 }
 
 void enlarge(HashMap * map) {
