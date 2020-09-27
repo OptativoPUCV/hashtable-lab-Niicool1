@@ -106,6 +106,7 @@ void * searchMap(HashMap * map,  char * key) {
       return NULL;
       break;
     }
+    map->current= map->current+1; 
   }
   return NULL;  
   
