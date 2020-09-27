@@ -102,7 +102,7 @@ void * searchMap(HashMap * map,  char * key) {
     if (i==map->capacity-1){
       i=0;
     }
-    if (map->buckets[i]->key == NULL){
+    if (is_equal(map->buckets[i]->key, NULL)){
       return NULL;
       break;
     }
