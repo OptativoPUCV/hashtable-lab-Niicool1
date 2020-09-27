@@ -93,6 +93,7 @@ void * searchMap(HashMap * map,  char * key) {
   printf("hola");
   for (i=h;i<map->capacity;i++){
     if (is_equal(map->buckets[i]->key,key)){
+      map->current=i;
       return map->buckets[i]->value;
       break;
     }
