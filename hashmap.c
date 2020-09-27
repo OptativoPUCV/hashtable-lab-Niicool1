@@ -136,7 +136,7 @@ void * nextMap(HashMap * map) {
   long i;
   for (i=map->current+1;i<map->capacity;i++){
     if (map->buckets[i]!= NULL && map->buckets[i]->key!=NULL){
-      //map->current=i;
+      map->current=i;
       printf("%ld", map->current);
       return map->buckets[i]->value;
       
