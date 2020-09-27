@@ -107,7 +107,7 @@ void * searchMap(HashMap * map,  char * key) {
       }
       if (i==map->capacity-1){
         i=0;
-       }
+      }
       if (is_equal(map->buckets[i]->key, NULL)){
         return NULL;
         break;
@@ -123,8 +123,8 @@ void * firstMap(HashMap * map) {
     int i;
     for (i=0;i<map->capacity;i++){
       if (map->buckets[i]!= NULL){
-        map->current=map->current+1;
         return map->buckets[i]->value;
+         map->current=map->current+1;
       }
     }
     return NULL;
@@ -134,10 +134,10 @@ void * nextMap(HashMap * map) {
   int i;
   for (i=map->current;i<map->capacity;i++){
     if (map->buckets[i]!= NULL){
+      map->current=map->current+1;
       return map->buckets[i]->value;
     }
-   
+
   }
-  map->current=map->current+1;
     return NULL;
 }
