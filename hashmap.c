@@ -124,7 +124,7 @@ void * firstMap(HashMap * map) {
     for (i=0;i<map->capacity;i++){
       if (map->buckets[i]!= NULL && map->buckets[i]->key!=NULL){
         map->current=i;
-        printf("%ld", i);
+        
         return map->buckets[i]->value;
          
       }
@@ -133,10 +133,11 @@ void * firstMap(HashMap * map) {
 }
 
 void * nextMap(HashMap * map) {
-  int i;
+  long i;
   for (i=map->current;i<map->capacity;i++){
     if (map->buckets[i]!= NULL && map->buckets[i]->key!=NULL){
       map->current=i;
+      printf("%ld", i);
       return map->buckets[i]->value;
       
     }
