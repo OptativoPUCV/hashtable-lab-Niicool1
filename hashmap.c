@@ -82,7 +82,14 @@ HashMap * createMap(long capacity) {
 }
 
 void eraseMap(HashMap * map,  char * key) {    
-  
+    int i;
+    for (i=0;i<map->capacity;i++){
+      if (is_equal(searchMap(map,key),map->buckets[i]->value)){
+        map->buckets[i]->key= NULL;
+        map->buckets[i]->value = NULL;
+      }
+
+    }
 
 
 }
@@ -90,7 +97,6 @@ void eraseMap(HashMap * map,  char * key) {
 void * searchMap(HashMap * map,  char * key) {   
   long h= hash(key,map->capacity);
   int i;
-  printf("hola");
   for (i=h;i<map->capacity;i++){
     if(map->buckets[i]!=NULL){
       if (is_equal(map->buckets[i]->key,key)){
