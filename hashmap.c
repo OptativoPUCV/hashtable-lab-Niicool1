@@ -94,6 +94,7 @@ void * searchMap(HashMap * map,  char * key) {
   for (i=h;i<map->capacity;i++){
     if (is_equal(map->buckets[i]->key,key)){
       return map->buckets[i]->value;
+      map->current= map->current+1; 
       break;
     }
     else{
@@ -106,7 +107,7 @@ void * searchMap(HashMap * map,  char * key) {
       return NULL;
       break;
     }
-    map->current= map->current+1; 
+    
   }
   return NULL;  
   
