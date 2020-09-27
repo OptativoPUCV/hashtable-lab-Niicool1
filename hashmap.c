@@ -88,9 +88,27 @@ void eraseMap(HashMap * map,  char * key) {
 }
 
 void * searchMap(HashMap * map,  char * key) {   
-
-
-    return NULL;
+  long h= hash(key,map->capacity);
+  int i;
+  printf("hola");
+  for (i=h;i<map->capacity;i++){
+    if (map->buckets[i]->key == key){
+      return map->buckets[i]->value;
+      break;
+    }
+    else{
+      continue;
+    }
+    if (i==map->capacity-1){
+      i=0;
+    }
+    if (map->buckets[i]->key == NULL){
+      return NULL;
+      break;
+    }
+  }
+  return NULL;  
+  
 }
 
 void * firstMap(HashMap * map) {
